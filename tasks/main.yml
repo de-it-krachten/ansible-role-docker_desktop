@@ -1,0 +1,29 @@
+---
+
+- block:
+
+    - name: download the package
+      get_url:
+        url: "{{ docker_desktop_rpm }}"
+        dest: /var/tmp/{{ docker_desktop_rpm | basename }}
+
+    - name: install the package
+      dnf:
+        name: /var/tmp/{{ docker_desktop_rpm | basename }}
+        state: present
+
+  when: ansible_os_family == 'RedHat'
+
+
+- block:
+
+    - name: download the package
+      get_url:
+        url: "{{ docker_desktop_deb }}"
+        dest: /var/tmp/{{ docker_desktop_deb | basename }}
+
+    - name: install the package
+      apt:
+        deb: /var/tmp/{{ docker_desktop_deb | basename }}
+  
+  when: ansible_os_family == 'Debian'

@@ -1,0 +1,20 @@
+---
+
+# Generic
+generic:
+  role: ansible-role-docker_desktop
+  role_short: docker_desktop
+  role_description: |
+    Manages Docker Desktop for Linux
+
+github:
+  fail_fast: false
+
+molecule:
+  converge:
+    roles:
+      - docker
+
+ci_templates:
+  requirements.yml:
+    force: false
