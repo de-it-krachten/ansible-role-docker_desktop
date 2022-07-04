@@ -7,14 +7,10 @@ generic:
   role_description: |
     Manages Docker Desktop for Linux
 
-github:
-  fail_fast: false
-
 molecule:
   converge:
     roles:
       - docker
-
-ci_templates:
-  requirements.yml:
-    force: false
+  requirements:
+    roles_extra:
+      - docker
