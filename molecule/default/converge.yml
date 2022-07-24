@@ -2,6 +2,7 @@
 
 - name: Converge
   hosts: all
+  become: "{{ molecule['converge']['become'] | default('yes') }}"
   vars:
   pre_tasks:
     - name: Create 'remote_tmp'
