@@ -1,6 +1,7 @@
 ---
 
-- block:
+- name: RedHat family
+  block:
 
     - name: download the package
       get_url:
@@ -15,7 +16,8 @@
   when: ansible_os_family == 'RedHat'
 
 
-- block:
+- name: Debian family
+  block:
 
     - name: download the package
       get_url:
