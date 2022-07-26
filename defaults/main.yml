@@ -8,5 +8,5 @@ docker_desktop_rpm: >-
   https://desktop.docker.com/linux/main/amd64/docker-desktop-{{ docker_desktop_version }}-x86_64.rpm
 
 # docker desktop DEB (Debian-family)
-docker_destop_deb: >-
+docker_desktop_deb: >-
   https://desktop.docker.com/linux/main/amd64/docker-desktop-{{ docker_desktop_version }}-amd64.deb
