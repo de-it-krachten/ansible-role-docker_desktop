@@ -71,10 +71,12 @@ platforms:
 
 molecule:
   driver: vagrant
-  active: false
   converge:
     roles:
       - docker
   requirements:
     roles_extra:
       - docker
+
+github:
+  molecule: false
