@@ -10,18 +10,8 @@ Manages Docker Desktop for Linux
 
 Supported platforms
 
-- Red Hat Enterprise Linux 7<sup>1</sup>
-- Red Hat Enterprise Linux 8<sup>1</sup>
-- Red Hat Enterprise Linux 9<sup>1</sup>
-- CentOS 7
-- RockyLinux 8
-- RockyLinux 9
-- OracleLinux 8
-- AlmaLinux 8
-- AlmaLinux 9
 - Debian 10 (Buster)
 - Debian 11 (Bullseye)
-- Ubuntu 18.04 LTS
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
 - Fedora 35
@@ -41,7 +31,7 @@ docker_desktop_rpm: >-
   https://desktop.docker.com/linux/main/amd64/docker-desktop-{{ docker_desktop_version }}-x86_64.rpm
 
 # docker desktop DEB (Debian-family)
-docker_destop_deb: >-
+docker_desktop_deb: >-
   https://desktop.docker.com/linux/main/amd64/docker-desktop-{{ docker_desktop_version }}-amd64.deb
 </pre></code>
 
