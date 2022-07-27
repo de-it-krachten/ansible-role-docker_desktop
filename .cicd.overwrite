@@ -69,14 +69,48 @@ platforms:
     ci: false
     supported: false
 
+github:
+  fail_fast: false
+  molecule: false
+
 molecule:
   driver: vagrant
-  converge:
-    roles:
-      - docker
   requirements:
     roles_extra:
+      - python
       - docker
-
-github:
-  molecule: false
+      - gnome_desktop
+      - package
+      - reboot
+  prepare:
+    vars:
+      update_all: true
+  converge:
+    roles:
+      - python
+      - docker
+      - gnome_desktop
+    vars:
+      gnome_desktop_wayland: false
+      gnome_desktop_autologin_enable: true
+      gnome_desktop_autologin: 'vagrant'
+      gnome_desktop_lock_disable: true
+      gnome_desktop_lock_timeout: '0'
+  host_vars:
+    docker_dekstop-{{ platform.name }}-node1:
+      gnome_desktop_minimal: true
+  scenario:
+    test_sequence:
+      - dependency
+      - lint
+      - cleanup
+      - destroy
+      - syntax
+      - create
+      - prepare
+      - converge
+      # - idempotence
+      - side_effect
+      - verify
+      - cleanup
+      - destroy

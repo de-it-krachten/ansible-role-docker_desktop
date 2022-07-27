@@ -36,8 +36,26 @@ provisioner:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
   inventory:
     group_vars: {}
-    host_vars: {}
+    host_vars:
+{% for platform in MOLECULE_DISTROS %}
+      docker_dekstop-{{ platform.name }}-node1:
+        gnome_desktop_minimal: true
+
+{% endfor %}
 scenario:
   name: default
+  test_sequence:
+    - dependency
+    - lint
+    - cleanup
+    - destroy
+    - syntax
+    - create
+    - prepare
+    - converge
+    - side_effect
+    - verify
+    - cleanup
+    - destroy
 verifier:
   name: ansible
