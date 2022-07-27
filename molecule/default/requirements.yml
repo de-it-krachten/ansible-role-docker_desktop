@@ -25,7 +25,23 @@ roles:
     src: https://github.com/de-it-krachten/ansible-role-unbound.git
     version: main
     scm: git
+  - name: python
+    src: https://github.com/de-it-krachten/ansible-role-python.git
+    version: main
+    scm: git
   - name: docker
     src: https://github.com/de-it-krachten/ansible-role-docker.git
+    version: main
+    scm: git
+  - name: gnome_desktop
+    src: https://github.com/de-it-krachten/ansible-role-gnome_desktop.git
+    version: main
+    scm: git
+  - name: package
+    src: https://github.com/de-it-krachten/ansible-role-package.git
+    version: main
+    scm: git
+  - name: reboot
+    src: https://github.com/de-it-krachten/ansible-role-reboot.git
     version: main
     scm: git

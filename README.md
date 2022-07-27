@@ -43,6 +43,12 @@ docker_desktop_deb: >-
 - name: sample playbook for role 'docker_desktop'
   hosts: all
   become: "{{ molecule['converge']['become'] | default('yes') }}"
+  vars:
+    gnome_desktop_wayland: False
+    gnome_desktop_autologin_enable: True
+    gnome_desktop_autologin: vagrant
+    gnome_desktop_lock_disable: True
+    gnome_desktop_lock_timeout: 0
   pre_tasks:
     - name: Create 'remote_tmp'
       file:
@@ -50,7 +56,9 @@ docker_desktop_deb: >-
         state: directory
         mode: "0700"
   roles:
+    - python
     - docker
+    - gnome_desktop
   tasks:
     - name: Include role 'docker_desktop'
       include_role:
