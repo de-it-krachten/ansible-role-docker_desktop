@@ -1,6 +1,6 @@
 ---
 
-- name: docker
+- name: Docker
   src: https://github.com/de-it-krachten/ansible-role-docker.git
   version: main
   scm: git
