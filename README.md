@@ -6,6 +6,15 @@
 Manages Docker Desktop for Linux
 
 
+
+## Dependencies
+
+#### Roles
+None
+
+#### Collections
+- community.general
+
 ## Platforms
 
 Supported platforms
@@ -37,6 +46,7 @@ docker_desktop_deb: >-
 
 
 
+
 ## Example Playbook
 ### molecule/default/converge.yml
 <pre><code>
@@ -51,7 +61,7 @@ docker_desktop_deb: >-
     gnome_desktop_lock_timeout: 0
   pre_tasks:
     - name: Create 'remote_tmp'
-      file:
+      ansible.builtin.file:
         path: /root/.ansible/tmp
         state: directory
         mode: "0700"
@@ -61,6 +71,6 @@ docker_desktop_deb: >-
     - gnome_desktop
   tasks:
     - name: Include role 'docker_desktop'
-      include_role:
+      ansible.builtin.include_role:
         name: docker_desktop
 </pre></code>
