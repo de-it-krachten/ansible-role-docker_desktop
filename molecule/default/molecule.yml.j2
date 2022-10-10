@@ -7,7 +7,7 @@ driver:
 lint: |
   set -e
   yamllint .
-  ln -s molecule/default/requirements.yml
+  ln -fs molecule/default/requirements.yml
   ansible-lint
   rm -f requirements.yml
 platforms:
@@ -16,6 +16,9 @@ platforms:
     box: "{{ platform.box }}"
     memory: "{{ platform.memory | default('2048') }}"
     cpus: "{{ platform.cpus | default('2') }}"
+{% if platform.interfaces is defined %}
+    interfaces: {{ platform.interfaces }}
+{% endif %}
     config_options:
       ssh.keep_alive: yes
       ssh.remote_user: "'vagrant'"
