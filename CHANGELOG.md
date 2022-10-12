@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/de-it-krachten/ansible-role-docker_desktop/compare/v1.0.0...v1.1.0) (2022-10-12)
+
+
+### Features
+
+* Move to FQCN ([ee90c70](https://github.com/de-it-krachten/ansible-role-docker_desktop/commit/ee90c70ff643688e17da6153fd326bb7de83a10b))
+* Update CI to latest standards ([e343c14](https://github.com/de-it-krachten/ansible-role-docker_desktop/commit/e343c14bb1ac246cbb5b4a5c1f14261a2c66260d))
+
 # 1.0.0 (2022-07-26)
 
 
