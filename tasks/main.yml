@@ -1,33 +1,30 @@
 ---
 
 - name: RedHat family
+  when: ansible_os_family == 'RedHat'
   block:
 
-    - name: download the package (RedHat)
-      get_url:
+    - name: Download the package (RedHat)
+      ansible.builtin.get_url:
         url: "{{ docker_desktop_rpm }}"
         dest: /var/tmp/{{ docker_desktop_rpm | basename }}
         mode: "0644"
 
-    - name: install the package (RedHat)
-      dnf:
+    - name: Install the package (RedHat)
+      ansible.builtin.dnf:
         name: /var/tmp/{{ docker_desktop_rpm | basename }}
         state: present
 
-  when: ansible_os_family == 'RedHat'
-
-
 - name: Debian family
+  when: ansible_os_family == 'Debian'
   block:
 
-    - name: download the package (Debian)
-      get_url:
+    - name: Download the package (Debian)
+      ansible.builtin.get_url:
         url: "{{ docker_desktop_deb }}"
         dest: /var/tmp/{{ docker_desktop_deb | basename }}
         mode: "0644"
 
-    - name: install the package (Debian)
-      apt:
+    - name: Install the package (Debian)
+      ansible.builtin.apt:
         deb: /var/tmp/{{ docker_desktop_deb | basename }}
-  
-  when: ansible_os_family == 'Debian'
