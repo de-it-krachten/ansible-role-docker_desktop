@@ -61,9 +61,9 @@ docker_desktop_deb: >-
     gnome_desktop_lock_disable: True
     gnome_desktop_lock_timeout: 0
   roles:
-    - python
-    - docker
-    - gnome_desktop
+    - deitkrachten.python
+    - deitkrachten.docker
+    - deitkrachten.gnome_desktop
   tasks:
     - name: Include role 'docker_desktop'
       ansible.builtin.include_role:
