@@ -19,12 +19,13 @@ None
 
 Supported platforms
 
+- OracleLinux 9
 - Debian 10 (Buster)
 - Debian 11 (Bullseye)
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
-- Fedora 35
 - Fedora 36
+- Fedora 37
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -52,23 +53,17 @@ docker_desktop_deb: >-
 <pre><code>
 - name: sample playbook for role 'docker_desktop'
   hosts: all
-  become: "{{ molecule['converge']['become'] | default('yes') }}"
+  become: "yes"
   vars:
     gnome_desktop_wayland: False
     gnome_desktop_autologin_enable: True
     gnome_desktop_autologin: vagrant
     gnome_desktop_lock_disable: True
     gnome_desktop_lock_timeout: 0
-  pre_tasks:
-    - name: Create 'remote_tmp'
-      ansible.builtin.file:
-        path: /root/.ansible/tmp
-        state: directory
-        mode: "0700"
   roles:
-    - python
-    - docker
-    - gnome_desktop
+    - deitkrachten.python
+    - deitkrachten.docker
+    - deitkrachten.gnome_desktop
   tasks:
     - name: Include role 'docker_desktop'
       ansible.builtin.include_role:
