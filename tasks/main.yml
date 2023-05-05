@@ -4,6 +4,11 @@
   when: ansible_os_family == 'RedHat'
   block:
 
+    - name: Import the GPG key (RedHat-family)
+      ansible.builtin.rpm_key:
+        key: https://download.docker.com/linux/fedora/gpg
+        state: present
+
     - name: Download the package (RedHat)
       ansible.builtin.get_url:
         url: "{{ docker_desktop_rpm }}"
@@ -14,10 +19,16 @@
       ansible.builtin.dnf:
         name: /var/tmp/{{ docker_desktop_rpm | basename }}
         state: present
+        disable_gpg_check: true
 
 - name: Debian family
   when: ansible_os_family == 'Debian'
   block:
+
+    - name: Import GPG key (Debian-family)
+      ansible.builtin.apt_key:
+        url: https://download.docker.com/linux/debian/gpg
+        state: present
 
     - name: Download the package (Debian)
       ansible.builtin.get_url:

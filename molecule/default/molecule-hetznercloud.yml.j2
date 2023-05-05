@@ -1,0 +1,58 @@
+---
+
+dependency:
+  name: galaxy
+driver:
+  name: hetznercloud
+lint: |
+  set -e
+  yamllint .
+  ln -fs molecule/default/requirements.yml
+  ansible-lint
+  rm -f requirements.yml
+platforms:
+{% for platform in MOLECULE_DISTROS %}
+  - name: docker-desktop-{{ platform.name }}-node1
+    server_type: "{{ platform.server_type | default('cx11') }}"
+    image: "{{ platform.image }}"
+    location: "{{ platform.location | default('hel1') }}"
+{% endfor %}
+provisioner:
+  name: ansible
+{% if MOLECULE_ANSIBLE_ARGS is defined %}
+  ansible_args:
+{% for molecule_ansible_arg in MOLECULE_ANSIBLE_ARGS %}
+    - {{ molecule_ansible_arg }}
+{% endfor %}
+{% endif %}
+  env:
+    ANSIBLE_PIPELINING: "True"
+  lint:
+    name: ansible-lint
+  playbooks:
+    converge: ${MOLECULE_PLAYBOOK:-converge.yml}
+  inventory:
+    group_vars: {}
+    host_vars:
+{% for platform in MOLECULE_DISTROS %}
+      docker_dekstop-{{ platform.name }}-node1:
+        gnome_desktop_minimal: true
+
+{% endfor %}
+scenario:
+  name: default
+  test_sequence:
+    - dependency
+    - lint
+    - cleanup
+    - destroy
+    - syntax
+    - create
+    - prepare
+    - converge
+    - side_effect
+    - verify
+    - cleanup
+    - destroy
+verifier:
+  name: ansible
