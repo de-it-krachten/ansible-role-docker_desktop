@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/de-it-krachten/ansible-role-docker_desktop/compare/v1.1.0...v1.2.0) (2023-05-06)
+
+
+### Bug Fixes
+
+* Add GPG key import ([8b33975](https://github.com/de-it-krachten/ansible-role-docker_desktop/commit/8b33975adc85f4cb0ffdad581e4d0f7372c2bd6a))
+
+
+### Features
+
+* Move to namespaced role names ([d496588](https://github.com/de-it-krachten/ansible-role-docker_desktop/commit/d496588037cf35f978e2e2d6a6ee6c79bff684be))
+
 # [1.1.0](https://github.com/de-it-krachten/ansible-role-docker_desktop/compare/v1.0.0...v1.1.0) (2022-10-12)
 
 
