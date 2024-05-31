@@ -13,7 +13,7 @@ Manages Docker Desktop for Linux
 None
 
 #### Collections
-- community.general
+None
 
 ## Platforms
 
@@ -27,8 +27,9 @@ Supported platforms
 - Debian 12 (Bookworm)
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
-- Fedora 37
-- Fedora 38
+- Ubuntu 24.04 LTS
+- Fedora 39
+- Fedora 40
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -56,12 +57,12 @@ docker_desktop_deb: >-
 <pre><code>
 - name: sample playbook for role 'docker_desktop'
   hosts: all
-  become: "yes"
+  become: 'yes'
   vars:
-    gnome_desktop_wayland: False
-    gnome_desktop_autologin_enable: True
+    gnome_desktop_wayland: false
+    gnome_desktop_autologin_enable: true
     gnome_desktop_autologin: vagrant
-    gnome_desktop_lock_disable: True
+    gnome_desktop_lock_disable: true
     gnome_desktop_lock_timeout: 0
   roles:
     - deitkrachten.python
