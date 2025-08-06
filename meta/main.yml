@@ -9,9 +9,6 @@ galaxy_info:
   license: MIT
   min_ansible_version: '2.9'
   platforms:
-    - name: EL
-      versions:
-        - '9'
     - name: opensuse
       versions:
         - all
@@ -20,6 +17,7 @@ galaxy_info:
         - buster
         - bullseye
         - bookworm
+        - trixie
     - name: Ubuntu
       versions:
         - focal
