@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/de-it-krachten/ansible-role-docker_desktop/compare/v1.5.0...v1.6.0) (2025-08-06)
+
+
+### Features
+
+* Add support for Debian 13 (Trixie) ([bbda320](https://github.com/de-it-krachten/ansible-role-docker_desktop/commit/bbda320285a65acf384d76649d709ddbd1d46a8f))
+
 # [1.5.0](https://github.com/de-it-krachten/ansible-role-docker_desktop/compare/v1.4.0...v1.5.0) (2024-12-29)
 
 
