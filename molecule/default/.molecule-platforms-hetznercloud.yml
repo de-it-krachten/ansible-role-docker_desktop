@@ -29,7 +29,7 @@
   server_type: cx22
   image: rocky-10
 - name: debian10
-  ci: true
+  ci: false
   server_type: cx22
   image: debian-10
 - name: debian11
@@ -77,10 +77,14 @@
   server_type: cx22
   image: fedora-40
 - name: fedora41
-  ci: true
+  ci: false
   server_type: cx22
   image: fedora-41
 - name: fedora42
   ci: true
   server_type: cx22
   image: fedora-42
+- name: fedora43
+  ci: true
+  server_type: cx22
+  image: fedora-43
