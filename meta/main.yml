@@ -9,12 +9,14 @@ galaxy_info:
   license: MIT
   min_ansible_version: '2.9'
   platforms:
+    - name: SLES
+      versions:
+        - all
     - name: opensuse
       versions:
         - all
     - name: Debian
       versions:
-        - buster
         - bullseye
         - bookworm
         - trixie
@@ -24,5 +26,6 @@ galaxy_info:
         - jammy
     - name: Fedora
       versions:
-        - all
+        - '42'
+        - '43'
 dependencies: []
