@@ -1,3 +1,14 @@
+# [1.7.0](https://github.com/de-it-krachten/ansible-role-docker_desktop/compare/v1.6.0...v1.7.0) (2026-03-14)
+
+
+### Features
+
+* Added support for Fedora 43 ([58daa94](https://github.com/de-it-krachten/ansible-role-docker_desktop/commit/58daa94a56f9f5743f496000b22bfcf29a899cd5))
+* Added support for openSUSE Leap 16 ([3b8c1a2](https://github.com/de-it-krachten/ansible-role-docker_desktop/commit/3b8c1a26ab12918d91c084adb13f41ec69ad76dc))
+* Added support for SUSE Linux Enterprise 16 ([92d9abf](https://github.com/de-it-krachten/ansible-role-docker_desktop/commit/92d9abf4f4af4a8f22f6197e2564a9e6cc4737a2))
+* Drop support for Debian 10 (Buster) ([023d47e](https://github.com/de-it-krachten/ansible-role-docker_desktop/commit/023d47e25a62446ebf5c319b7a4832903395307d))
+* Drop support for Fedora 41 ([900f0e7](https://github.com/de-it-krachten/ansible-role-docker_desktop/commit/900f0e74378dfb88b30523fbcc92524f54c11304))
+
 # [1.6.0](https://github.com/de-it-krachten/ansible-role-docker_desktop/compare/v1.5.0...v1.6.0) (2025-08-06)
 
 
