@@ -19,10 +19,6 @@ None
 
 Supported platforms
 
-- SUSE Linux Enterprise 15<sup>1</sup>
-- SUSE Linux Enterprise 16<sup>1</sup>
-- openSUSE Leap 15
-- openSUSE Leap 16
 - Debian 11 (Bullseye)
 - Debian 12 (Bookworm)
 - Debian 13 (Trixie)
