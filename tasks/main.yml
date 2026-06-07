@@ -1,7 +1,7 @@
 ---
 
 - name: RedHat family
-  when: ansible_os_family == 'RedHat'
+  when: ansible_facts.os_family == 'RedHat'
   block:
 
     - name: Import the GPG key (RedHat-family)
@@ -22,7 +22,7 @@
         disable_gpg_check: true
 
 - name: Debian family
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts.os_family == 'Debian'
   block:
 
     - name: Import GPG key (Debian-family)
