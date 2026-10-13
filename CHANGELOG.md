@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/de-it-krachten/ansible-role-docker_desktop/compare/v1.9.0...v1.10.0) (2026-10-13)
+
+
+### Features
+
+* Drop support for Debian 11 (Bullseye) ([88dfb67](https://github.com/de-it-krachten/ansible-role-docker_desktop/commit/88dfb67fd22faf65b6d5ef9fc1281949178ee5cc))
+
 # [1.9.0](https://github.com/de-it-krachten/ansible-role-docker_desktop/compare/v1.8.0...v1.9.0) (2026-07-23)
 
 
